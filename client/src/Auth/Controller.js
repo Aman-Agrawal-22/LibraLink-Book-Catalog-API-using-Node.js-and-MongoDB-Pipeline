@@ -14,15 +14,10 @@ const Controller = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 
-          {auth.isLoggedIn && auth.user ? (
+          {auth.isLoggedIn && auth.user && (
             <>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/home" element={<Home />} />
-            </>
-          ) : (
-            <>
-              <Route path="/dashboard" element={<Navigate to="/login" replace />} />
-              <Route path="/home" element={<Navigate to="/login" replace />} />
             </>
           )}
 

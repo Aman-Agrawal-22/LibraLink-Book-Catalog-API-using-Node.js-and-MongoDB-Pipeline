@@ -56,7 +56,9 @@ const Dashboard = () => {
 
   const deleteBook = async (id) => {
     try {
-      await axios.delete(`${backendUrl}/books/${id}`, { withCredentials: true });
+      await axios.delete(`${backendUrl}/books/${id}`, {
+        withCredentials: true,
+      });
       fetchBooks();
     } catch (err) {
       console.error(err);
@@ -82,6 +84,17 @@ const Dashboard = () => {
 
   return (
     <div className={styles.dashboardContainer}>
+      <h1
+        style={{
+          textAlign: "center",
+          fontSize: "2.5rem",
+          margin: "20px 0",
+          color: "#2c3e50",
+          fontWeight: "bold",
+        }}
+      >
+        LibraLink
+      </h1>
       <div className={styles.headerSection}>
         <h2 className={styles.dashboardTitle}>User Dashboard</h2>
         <form className={styles.bookForm} onSubmit={addBook}>

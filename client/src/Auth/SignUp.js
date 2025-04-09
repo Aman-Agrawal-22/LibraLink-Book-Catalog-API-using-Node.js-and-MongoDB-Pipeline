@@ -50,7 +50,17 @@ const Signup = () => {
 
   return (
     <div className={styles.signupContainer}>
-      <h2 className={styles.companyTagline}>Energizing World's Electric Future</h2>
+      <h1
+        style={{
+          textAlign: "center",
+          fontSize: "2.5rem",
+          margin: "20px 0",
+          color: "#2c3e50",
+          fontWeight: "bold",
+        }}
+      >
+        LibraLink
+      </h1>
       <h3 className={styles.signupHeading}>Sign Up</h3>
       {error && <p className={styles.errorMessage}>{error}</p>}
       <form className={styles.signupForm} onSubmit={handleSubmit}>

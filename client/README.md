@@ -1,3 +1,17 @@
+# 📚 LibraLink - Book Catalog API
+
+**LibraLink** is a full-stack **Book Catalog** web application built using **React.js** for the frontend and **Node.js + Express.js** with **MongoDB** for the backend.
+
+It enables users to:
+
+- 🔍 **Browse** a collection of books
+- 🔎 **Search** by book title
+- 🏷️ **Filter** by author, category, and minimum rating
+- 🔃 **Sort** by price or rating
+- 📄 **Paginate** through results
+
+All filtering, searching, sorting, and pagination are efficiently handled using **MongoDB’s aggregation pipeline**.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

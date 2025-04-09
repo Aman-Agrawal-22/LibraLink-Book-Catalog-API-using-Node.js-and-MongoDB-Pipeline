@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom'; 
+import { Link } from "react-router-dom";
 import styles from "./home.module.css";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
   const [search, setSearch] = useState("");
-  const [filters, setFilters] = useState({ author: "", category: "", minRating: "" });
-  const [pagination, setPagination] = useState({ currentPage: 1, totalPages: 1 });
+  const [filters, setFilters] = useState({
+    author: "",
+    category: "",
+    minRating: "",
+  });
+  const [pagination, setPagination] = useState({
+    currentPage: 1,
+    totalPages: 1,
+  });
   const [sortBy, setSortBy] = useState("price");
   const [order, setOrder] = useState("asc");
   const backendUrl = process.env.REACT_APP_BACKEND_URL;
@@ -86,9 +93,24 @@ const Home = () => {
 
   return (
     <div className={styles.homeContainer}>
+      <h1
+        style={{
+          textAlign: "center",
+          fontSize: "2.5rem",
+          margin: "20px 0",
+          color: "#2c3e50",
+          fontWeight: "bold",
+        }}
+      >
+        LibraLink
+      </h1>
       <div className={styles.authButtons}>
-        <Link to="/login" className={styles.authButton}>Login</Link>
-        <Link to="/signup" className={styles.authButton}>Signup</Link>
+        <Link to="/login" className={styles.authButton}>
+          Login
+        </Link>
+        <Link to="/signup" className={styles.authButton}>
+          Signup
+        </Link>
       </div>
       <h2 className={styles.homeTitle}>Book Collection</h2>
       <div className={styles.searchBar}>
@@ -117,16 +139,20 @@ const Home = () => {
           type="number"
           placeholder="Min Rating"
           value={filters.minRating}
-          onChange={(e) => setFilters({ ...filters, minRating: e.target.value })}
+          onChange={(e) =>
+            setFilters({ ...filters, minRating: e.target.value })
+          }
         />
         <button onClick={applyFilters}>Apply Filters</button>
       </div>
       <div className={styles.sortOptions}>
         <button onClick={() => handleSortChange("price")}>
-          Sort by Price ({sortBy === "price" ? (order === "asc" ? "↑" : "↓") : ""})
+          Sort by Price (
+          {sortBy === "price" ? (order === "asc" ? "↑" : "↓") : ""})
         </button>
         <button onClick={() => handleSortChange("rating")}>
-          Sort by Rating ({sortBy === "rating" ? (order === "asc" ? "↑" : "↓") : ""})
+          Sort by Rating (
+          {sortBy === "rating" ? (order === "asc" ? "↑" : "↓") : ""})
         </button>
       </div>
       <div className={styles.bookList}>
