@@ -22,7 +22,7 @@ Server/   # Node.js backend
 
 ### **1. Clone the Repository**
 ```sh
-git clone [https://github.com/your-username/.git](https://github.com/Aman-Agrawal-22/LibraLink-Book-Catalog-API-using-Node.js-and-MongoDB-Pipeline.git)
+git clone https://github.com/Aman-Agrawal-22/LibraLink-Book-Catalog-API-using-Node.js-and-MongoDB-Pipeline.git
 ```
 
 ### **2. Install Dependencies**
